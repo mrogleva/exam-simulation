@@ -6,7 +6,7 @@
 class PlacesDistributor
 {
 public:
-    PlacesDistributor(unsigned roomDimensionN, unsigned roomDimensionM, unsigned numberOfBrokenSeats = 0, const unsigned * const brokenSeatsIndices = {});
+    PlacesDistributor(unsigned roomDimensionN, unsigned roomDimensionM, unsigned numberOfBrokenSeats = 0, const unsigned * const brokenSeatsIndices = nullptr);
     PlacesDistributor(const PlacesDistributor &other) = delete;
     PlacesDistributor(PlacesDistributor &&other) = delete;
     PlacesDistributor &operator=(const PlacesDistributor &other) = delete;
@@ -21,7 +21,7 @@ private:
     unsigned roomDimensionM;                          ///< Number of columns in the room.
     unsigned numberOfBrokenSeats;                     ///< Number of broken seats in the room.
     std::vector<unsigned> brokenSeatsIndices;         ///< Indices of broken seats in the room.
-    std::vector<std::vector<unsigned>> roomPlacement; ///< Vector representing the layout of the room, where each index corresponds to a seat.
+    std::vector<std::vector<char>> roomPlacement;     ///< Vector representing the layout of the room, where each index corresponds to a seat.
 
     void calculatePlacement();
 };

@@ -11,13 +11,14 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  hello_test
-  hello_test.cpp
+  places-distributor-test
+  places-distributor-test.cpp
 )
 target_link_libraries(
-  hello_test
+  places-distributor-test
   GTest::gtest_main
+  exam-simulation
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(places-distributor-test)
